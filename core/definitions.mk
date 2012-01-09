@@ -2913,7 +2913,7 @@ endef
 ###########################################################
 
 define transform-generated-source
-@echo "$($(PRIVATE_PREFIX)DISPLAY) Generated: $(PRIVATE_MODULE) <= $<"
+@echo -e ${CL_PFX}"$($(PRIVATE_PREFIX)DISPLAY) Generated:"${CL_RST}" $(PRIVATE_MODULE) <= $<"
 @mkdir -p $(dir $@)
 $(hide) $(PRIVATE_CUSTOM_TOOL)
 endef
