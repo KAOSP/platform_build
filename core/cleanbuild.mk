@@ -150,16 +150,16 @@ endif  # if not ONE_SHOT_MAKEFILE dont_bother NO_ANDROID_CLEANSPEC
 clean-jack-files: clean-dex-files
 	$(hide) find $(OUT_DIR) -name "*.jack" | xargs rm -f
 	$(hide) find $(OUT_DIR) -type d -name "jack" | xargs rm -rf
-	@echo "All jack files have been removed."
+	@echo -e ${CL_GRN}" "All jack files have been removed."${CL_RST}
 
 .PHONY: clean-dex-files
 clean-dex-files:
 	$(hide) find $(OUT_DIR) -name "*.dex" ! -path "*/jack-incremental/*" | xargs rm -f
 	$(hide) for i in `find $(OUT_DIR) -name "*.jar" -o -name "*.apk"` ; do ((unzip -l $$i 2> /dev/null | \
 				grep -q "\.dex$$" && rm -f $$i) || continue ) ; done
-	@echo "All dex files and archives containing dex files have been removed."
+	@echo -e ${CL_GRN}" "All dex files and archives containing dex files have been removed."${CL_RST}
 
 .PHONY: clean-jack-incremental
 clean-jack-incremental:
 	$(hide) find $(OUT_DIR) -name "jack-incremental" -type d | xargs rm -rf
-	@echo "All jack incremental dirs have been removed."
+	@echo -e ${CL_GRN}"All jack incremental dirs have been removed."${CL_RST}
