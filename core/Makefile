@@ -2634,6 +2634,8 @@ ifeq ($(build_ota_package),true)
 # -----------------------------------------------------------------
 # OTA update package
 
+KAF_VERSION := KAF_$(TARGET_PRODUCT)_$(date +%d-%m)
+
 name := $(TARGET_PRODUCT)
 ifeq ($(TARGET_BUILD_TYPE),debug)
   name := $(name)_debug
@@ -2668,7 +2670,7 @@ $(INTERNAL_OTA_PACKAGE_TARGET): $(BUILT_TARGET_FILES_PACKAGE) \
 	   $(if $(OEM_OTA_CONFIG), -o $(OEM_OTA_CONFIG)) \
 	   $(BUILT_TARGET_FILES_PACKAGE) $@
 
-CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(TARGET_PRODUCT).zip
+CUSTOM_TARGET_PACKAGE := $(PRODUCT_OUT)/$(KAF_VERSION).zip
 
 .PHONY: otapackage bacon
 otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
