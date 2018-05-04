@@ -473,6 +473,17 @@ else if get_stage("%(bcb_dev)s") == "3/3" then
 
   system_progress = 0.75
 
+  script.Print("**************************************************");
+  script.Print(" __            _        ___     ______   _______  ");
+  script.Print("[  |  _       / \     .'   `. .' ____ \ |_   __ \ ");
+  script.Print(" | | / ]     / _ \   /  .-.  \| (___ \_|  | |__) |");
+  script.Print(" | '' <     / ___ \  | |   | | _.____`.   |  ___/ ");
+  script.Print(" | |`\ \  _/ /   \ \_\  `-'  /| \____) | _| |_    ");
+  script.Print("[__|  \_]|____| |____|`.___.'  \______.'|_____|   ");
+  script.Print("                                                  ");
+  script.Print("          Brought to you by Pedro Kalil           ");
+  script.Print("**************************************************");
+
   if OPTIONS.wipe_user_data:
     system_progress -= 0.1
   if HasVendorPartition(input_zip):
