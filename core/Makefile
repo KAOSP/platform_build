@@ -1,5 +1,7 @@
 # Put some miscellaneous rules here
 
+KAOSP_VERSION := KAOSP_$(TARGET_PRODUCT)_$(date +%d-%m)
+
 # Build system colors
 
 ifneq ($(BUILD_WITH_COLORS),0)
@@ -2671,8 +2673,6 @@ ifeq ($(build_ota_package),true)
 # -----------------------------------------------------------------
 # OTA update package
 
-KAOSP_VERSION := KAOSP_$(TARGET_PRODUCT)_$(date +%d-%m)
-
 name := $(TARGET_PRODUCT)
 ifeq ($(TARGET_BUILD_TYPE),debug)
   name := $(name)_debug
@@ -2714,7 +2714,27 @@ otapackage: $(INTERNAL_OTA_PACKAGE_TARGET)
 bacon: otapackage
 	$(hide) ln -f $(INTERNAL_OTA_PACKAGE_TARGET) $(CUSTOM_TARGET_PACKAGE)
 	$(hide) $(MD5SUM) $(CUSTOM_TARGET_PACKAGE) > $(CUSTOM_TARGET_PACKAGE).md5sum
-	@echo -e "Package complete: $(CUSTOM_TARGET_PACKAGE)"
+	@echo ""
+	@echo -e ${CL_CYN}"   ██████                               ████████                         ███████████████                   █████████████         █████████████████         "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████                              ██████████                    ███████████████████████             ██████████████████      ████████████████████      "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████                             ████████████                 ███████████████████████████         █████████████████████     ██████████████████████    "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████                             ████████████                ██████████         ██████████        ███████        ██████     ███████        ████████   "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████                            ██████  ██████             ████████                 ████████      ██████                    ███████          ███████  "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████        ████████           ███████  ███████            ███████                   ███████      ███████                   ███████           ██████  "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████      ████████            ███████    ███████          ███████                     ███████     ██████████                ███████          ███████  "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████    ████████              ██████      ██████          ██████                       ██████       █████████████           ███████        ████████   "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████  ████████               ███████      ███████        ███████                       ███████        ███████████████       ██████████████████████    "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████████████                ███████        ███████        ██████                       ██████              ████████████     ████████████████████      "${CL_CYN}
+	@echo -e ${CL_CYN}"   ███████████████              ███████████████████████        ███████                      ██████                  █████████    ██████████████████        "${CL_CYN}
+	@echo -e ${CL_CYN}"   ████████████████             ████████████████████████       ███████                     ███████                     ███████   ███████                   "${CL_CYN}
+	@echo -e ${CL_CYN}"   ████████  ███████           ██████████████████████████       ████████                  ███████      █████           ███████   ███████                   "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████     ████████        ███████              ███████       █████████             █████████      ███████          ███████   ███████                   "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████      ████████      ███████               ████████        ███████████     ███████████         █████████    █████████    ███████                   "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████        ███████    ████████                ████████         ███████████████████████            ████████████████████     ███████                   "${CL_CYN}
+	@echo -e ${CL_CYN}"   ██████         ████████  ███████                  ███████            █████████████████                 ████████████████       ███████                   "${CL_CYN}
+	@echo -e ${CL_CYN}"                                                               Brought to you by Pedro Kalil                                                               "${CL_CYN}
+	@echo ""
+	@echo -e ${CL_GRN}"Package complete:"${CL_RST}" $(CUSTOM_TARGET_PACKAGE)"
 
 endif    # build_ota_package
 
