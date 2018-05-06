@@ -55,7 +55,9 @@ PRODUCT_COPY_FILES := \
         frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.carrier=unknown
+    ro.carrier=unknown \
+	ro.kaosp.version=$(KAOSP_VERSION) \
+	ro.modversion=$(KAOSP_VERSION)
 
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/dancing-script/fonts.mk)
