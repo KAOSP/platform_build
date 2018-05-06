@@ -335,7 +335,7 @@ $(cleantarget) : PRIVATE_CLEAN_FILES := \
     $(LOCAL_INSTALLED_MODULE) \
     $(intermediates)
 $(cleantarget)::
-	@echo -e ${CL_GRN}"Clean:"${CL_RST}" $(PRIVATE_MODULE)"
+	@echo -e ${CL_GRN}"Clean: $(PRIVATE_MODULE)"${CL_RST}
 	$(hide) rm -rf $(PRIVATE_CLEAN_FILES)
 
 ###########################################################
