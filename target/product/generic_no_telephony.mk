@@ -90,3 +90,6 @@ PRODUCT_PACKAGES += \
    Stock \
    Mono
 
+# APNs
+PRODUCT_COPY_FILES += \
+     $(ANDROID_BUILD_TOP)/build/make/target/product/apns-conf.xml:system/etc/apns-conf.xml
