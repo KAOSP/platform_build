@@ -1,7 +1,8 @@
 # Put some miscellaneous rules here
 
+KAOSP_DEVICE := $(shell echo $(TARGET_PRODUCT) | sed 's/aosp/KAOSP/')
 DMTIMESTAMP := $(shell date +%d-%m)
-KAOSP_VERSION := KAOSP_$(TARGET_PRODUCT)_$(DMTIMESTAMP)
+KAOSP_VERSION := $(KAOSP_DEVICE)_$(DMTIMESTAMP)
 
 # Build system colors
 

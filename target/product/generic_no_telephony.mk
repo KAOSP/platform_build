@@ -75,8 +75,9 @@ PRODUCT_DEVICE := generic
 PRODUCT_NAME := generic_no_telephony
 
 # KAOSP
+KAOSP_DEVICE := $(shell echo $(TARGET_PRODUCT) | sed 's/aosp/KAOSP/')
 DMTIMESTAMP := $(shell date +%d-%m)
-KAOSP_VERSION := KAOSP_$(TARGET_PRODUCT)_$(DMTIMESTAMP)
+KAOSP_VERSION := $(KAOSP_DEVICE)_$(DMTIMESTAMP)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kaosp.version=$(KAOSP_VERSION) \
     ro.modversion=$(KAOSP_VERSION)\
