@@ -55,9 +55,7 @@ PRODUCT_COPY_FILES := \
         frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.carrier=unknown \
-	ro.kaf.version=$(KAF_VERSION) \
-	ro.modversion=$(KAF_VERSION)
+        ro.carrier=unknown
 
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/dancing-script/fonts.mk)
@@ -75,3 +73,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 PRODUCT_BRAND := generic
 PRODUCT_DEVICE := generic
 PRODUCT_NAME := generic_no_telephony
+
+# KAF
+DMTIMESTAMP := $(shell date +%d-%m)
+KAOSP_VERSION := KAF_$(TARGET_PRODUCT)_$(DMTIMESTAMP)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kaf.version=$(KAF_VERSION) \
+    ro.modversion=$(KAF_VERSION)
+
