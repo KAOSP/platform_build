@@ -81,3 +81,11 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.kaf.version=$(KAF_VERSION) \
     ro.modversion=$(KAF_VERSION)
 
+# Themes
+PRODUCT_PROPERTY_OVERRIDES += ro.boot.vendor.overlay.theme=com.google.android.theme.pixel
+PRODUCT_PROPERTY_OVERRIDES += ro.com.google.ime.theme_id=5
+PRODUCT_PACKAGES += \
+   Pixel \
+   Stock \
+   Mono
+
