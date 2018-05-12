@@ -55,9 +55,7 @@ PRODUCT_COPY_FILES := \
         frameworks/av/media/libeffects/data/audio_effects.conf:system/etc/audio_effects.conf
 
 PRODUCT_PROPERTY_OVERRIDES += \
-    ro.carrier=unknown \
-	ro.kaosp.version=$(KAOSP_VERSION) \
-	ro.modversion=$(KAOSP_VERSION)
+        ro.carrier=unknown
 
 $(call inherit-product-if-exists, frameworks/base/data/fonts/fonts.mk)
 $(call inherit-product-if-exists, external/google-fonts/dancing-script/fonts.mk)
@@ -75,3 +73,11 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core.mk)
 PRODUCT_BRAND := generic
 PRODUCT_DEVICE := generic
 PRODUCT_NAME := generic_no_telephony
+
+# KAOSP
+DMTIMESTAMP := $(shell date +%d-%m)
+KAOSP_VERSION := KAOSP_$(TARGET_PRODUCT)_$(DMTIMESTAMP)
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.kaosp.version=$(KAOSP_VERSION) \
+    ro.modversion=$(KAOSP_VERSION)
+
