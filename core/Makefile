@@ -1,7 +1,12 @@
 # Put some miscellaneous rules here
 
+KAOSP_DEVICE := $(shell echo $(TARGET_PRODUCT) | sed 's/aosp/KAOSP/')
 DMTIMESTAMP := $(shell date +%d-%m)
+<<<<<<< HEAD
 KAF_VERSION := KAF_$(TARGET_PRODUCT)_$(DMTIMESTAMP)
+=======
+KAOSP_VERSION := $(KAOSP_DEVICE)_$(DMTIMESTAMP)
+>>>>>>> fcbecfa97... makefile: Change KAOSP device from KAOSP_aosp to KAOSP
 
 # Build system colors
 

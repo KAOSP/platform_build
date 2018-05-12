@@ -75,8 +75,9 @@ PRODUCT_DEVICE := generic
 PRODUCT_NAME := generic_no_telephony
 
 # KAF
+KAF_DEVICE := $(shell echo $(TARGET_PRODUCT) | sed 's/aosp/KAF/')
 DMTIMESTAMP := $(shell date +%d-%m)
-KAOSP_VERSION := KAF_$(TARGET_PRODUCT)_$(DMTIMESTAMP)
+KAF_VERSION := $(KAF_DEVICE)_$(DMTIMESTAMP)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kaf.version=$(KAF_VERSION) \
     ro.modversion=$(KAF_VERSION) \
