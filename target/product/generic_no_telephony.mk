@@ -79,7 +79,8 @@ DMTIMESTAMP := $(shell date +%d-%m)
 KAOSP_VERSION := KAOSP_$(TARGET_PRODUCT)_$(DMTIMESTAMP)
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.kaosp.version=$(KAOSP_VERSION) \
-    ro.modversion=$(KAOSP_VERSION)
+    ro.modversion=$(KAOSP_VERSION)\
+    qemu.hw.mainkeys=0
 
 # Themes
 PRODUCT_PROPERTY_OVERRIDES += ro.boot.vendor.overlay.theme=com.google.android.theme.pixel
