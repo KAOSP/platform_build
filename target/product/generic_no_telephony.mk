@@ -26,7 +26,13 @@ PRODUCT_PACKAGES := \
     SystemUI \
     SysuiDarkThemeOverlay \
     EasterEgg \
-    WallpaperCropper
+    WallpaperCropper \
+    Messaging \
+    SnapdragonCamera \
+    SnapdragonGallery \
+    SnapdragonMusic \
+    MusicFX \
+    Jelly
 
 PRODUCT_PACKAGES += \
     clatd \
