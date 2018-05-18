@@ -27,12 +27,13 @@ PRODUCT_PACKAGES := \
     SysuiDarkThemeOverlay \
     EasterEgg \
     WallpaperCropper \
-    Messaging \
-    SnapdragonCamera \
+    messaging \
     SnapdragonGallery \
+    Camera2 \
     SnapdragonMusic \
     MusicFX \
-    Jelly
+    Jelly \
+    Launcher3
 
 PRODUCT_PACKAGES += \
     clatd \
