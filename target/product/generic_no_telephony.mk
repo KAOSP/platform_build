@@ -20,9 +20,10 @@
 PRODUCT_PACKAGES := \
     Bluetooth \
     BluetoothMidiService \
-    Camera2 \
-    Gallery2 \
-    Music \
+    SnapdragonCamera \
+    SnapdragonGallery \
+    SnapdragonMusic \
+    Jelly \
     MusicFX \
     OneTimeInitializer \
     Provision \
