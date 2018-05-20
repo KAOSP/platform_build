@@ -33,7 +33,8 @@ PRODUCT_PACKAGES := \
     SnapdragonMusic \
     MusicFX \
     Jelly \
-    Launcher3
+    Launcher3 \
+    WallpaperPicker
 
 PRODUCT_PACKAGES += \
     clatd \
